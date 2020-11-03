@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>It's Me! Lois and I code</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="header-menu-container">
+        <li class="about">About</li>
+        <li class="skills">Skills</li>
+        <li class="contact">Contact</li>
+      </ul>
+      <span>Resume</span>
+    </nav>
+    <section id="hero-section" class="hero-section-container">
+      <span class="the-largest-size">
+        It's me. <span class="emphasis">LOIS</span></span
+      >
+      <h1>I'm a Developer</h1>
+      <span class="click-event hero-scroll-to-top">^</span>
+    </section>
+    <section id="about-section">
+      <h1>About</h1>
+      <div class="about-container">
+        I walked into my apartment after a trip to see family. As I opened the door, the smell hit me... "What is that?" I wondered. Maybe it was the heavy use of bug spray i used baking in the summer heat. I looked around and noticed in one of my bug traps a blackish blob. I got closer and noticed the shape of the lizard that was crawling around outside my place before I left for my trip. It was dead for 4 days! It was really sad and honestly a turning point for me. I was unhappy with the direction with my career and my life in general.
+
+        With all this, I made the decision to get into programming. I didn't want to live this close to nature but how should l go about it? I didn't have internet. NOTHING! Not even Dail-up. I could use mobile data but at the time I was chasing deals. My money was tight and mobile data plans were expensive. So it was a 30-minute drive to Starbucks for great internet, a 10-minute drive to McDonalds for mediocre internet, or stay at home and do what I can with a limited data plan. It worked! For months that worked for me, switching between all options to practice, develop, and download.
+        
+        The journey to become a Developer was long, stressful, and at times, heart breaking but well worth it. I'm so happy that I made that decision. I have been working as a Developer for a couple of years now, moving up to mid-level, with the title of Senior Developer slowly approaching. I have learned, improved and grown so much in my career. With my love of teaching and mentoring, I want to share all the tips, tricks, and every bit of knowledge I have learned and still learning on my continued journey into programming.
+      </div>
+    </section>
+    <section id="skills-section">
+        <h1>Skills</h1>
+        <div id="contact-info-container">
+            
+        </div>
+      </section>
+      <section id="contact-section">
+        <h1>Contact</h1>
+        <div id="contact-info-container">
+
+        </div>
+      </section>
+    <script>
+                const createMenuItemClickEvent = (menuitem) => document
+        .querySelector(`.${menuitem}`)
+        .addEventListener("click", () => {
+          window.scrollTo({
+            top: document.querySelector(`#${menuitem}-section`).offsetTop,
+            behavior: "smooth",
+          });
+        });
+const highlightMenuItemOnActivate = (link) =>{
+    if(document.querySelector(`.active`)){
+        document.querySelector(`.active`).classList.remove("active");
+    }
+    document.querySelector(`.${link}`).classList.add("active");
+}
+        window.addEventListener("scroll",(win) => {
+            const position = window.scrollY;
+            const elementHeight = document.querySelector(`#hero-section`).clientHeight;
+            const navHeight = document.querySelector(`nav`).clientHeight + 45;
+            const aboutSectionElement = document.querySelector(`#about-section`);
+            const contactSectionElement = document.querySelector("#contact-section");
+            const skillsSectionElement = document.querySelector("#skills-section");
+
+            if(position > (elementHeight - navHeight)){
+                document.querySelector("nav").classList.add("fixHeader");          
+            }else{
+                document.querySelector("nav").classList.remove("fixHeader");
+                document.querySelector(".active")?.classList?.remove("active");
+            }
+            console.log(position > (elementHeight - document.querySelector("nav").clientHeight));
+            if(position > aboutSectionElement.offsetTop - navHeight && position < aboutSectionElement.offsetTop + elementHeight){
+                highlightMenuItemOnActivate("about");
+            }else if(position > skillsSectionElement.offsetTop - navHeight && position < skillsSectionElement.offsetTop + elementHeight){
+                highlightMenuItemOnActivate("skills");
+            }else if(position > contactSectionElement.offsetTop - elementHeight - navHeight){
+                highlightMenuItemOnActivate("contact");
+            }
+        })
+
+                // on click arrow move to top
+      document
+        .querySelector(".hero-scroll-to-top")
+        .addEventListener("click", (event) => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        createMenuItemClickEvent("about");
+        createMenuItemClickEvent("skills");
+        createMenuItemClickEvent("contact");
+    </script>
+  </body>
+</html>
