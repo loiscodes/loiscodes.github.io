@@ -1,32 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
 body{
     margin: 0 auto;
-    font-family: "Merriweather Sans";
+    background: #264653;
 }
 
 div.header-menu-container{
     background: rgb(38, 70, 83)
 }
 section#hero-section{
-background-image: linear-gradient(rgba(38, 70, 83, .8), rgba(38, 70, 83, .8)), url(./images/working.jpeg);
+background-image: url(./images/working.jpeg);
     background-position: center;
     background-size: cover;
     overflow: hidden;
+}
+div.hero-section-container{
+    display: flex;
+    align-items: center;
+    font-family: "Merriweather Sans";
 }
 
 section{
     height: 100vh;
     width:100%;
+    display: flex;
     align-items: center;
-    color:#264653;
+    color:#fff;
 }
 /* e9c46a */
 section#skills-section{
     background-color: #e9c46a;
 }
 
-section.hero-section-container{
-    width: 100%;
+section.split-section{
+    width: 50%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -43,14 +49,14 @@ span.the-largest-size{
     width:auto;
     font-weight: 500;
     display: inline-flex;
-    font-size: 10em;
+    font-size: 5em;
     align-items: center;
 }
 
 span.emphasis{
     color:#e9c46a;
     font-weight: 900;
-    font-size: 2em;
+    font-size: 15em;
     font-weight: 900;
 
 }
@@ -89,13 +95,6 @@ li.active{
     background-color: #e76f51;
 }
 
-.about-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow:hidden;
-}
 nav {
     height: 50px;
     width: 100%;

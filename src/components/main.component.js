@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 
 import HomeComponent from "./home.component";
+// import MenuComponent from "./menu/menu.component";
+
+// import AboutComponent from "./about/about.component";
+
 class MainComponent extends Component{
 render(){
     return (
       <>
-        <HomeComponent />  
+        <HomeComponent /> 
+        {/* <AboutComponent />   */}
+
       </>
     )
 }
