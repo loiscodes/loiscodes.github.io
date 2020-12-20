@@ -10,8 +10,12 @@ class HomeComponent extends Component {
           
           </section>
             <section className="split-section">
-            <span className="the-largest-size">
+              <div className="hero-title">
+                <span className="the-largest-size">
               It's me. </span><span className="emphasis">LOIS</span>
+              <h1>Site In Development.</h1> 
+
+              </div>
 
             <div className="socials">
             <a href="https://youtube.com/channel/UCNKMWBhe6U8ZZ2fJSggdzsA" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/windows/50/e9c46a/youtube.svg" alt="YouTube" /></a>
@@ -22,7 +26,7 @@ class HomeComponent extends Component {
             <a href="https://linkedin.com/in/loisharris" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/windows/50/e9c46a/linkedin.svg" alt="LinkedIn" /></a>
             <a href="https://drive.google.com/file/d/1b9JqTNtKDfWroMMAN4COt1uaW4DRaqny/view?usp=sharing" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/windows/50/e9c46a/open-resume.png" alt="Download Resume" id="download-resume" /></a>
             </div>
-            <h1>Site In Development.</h1>
+
   
           </section>
           </div>
